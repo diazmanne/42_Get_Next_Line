@@ -1,28 +1,40 @@
 #include "get_next_line.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
+
 int main(int argc, char **argv)
 {
-	char **line;
 	int fd;
-	int	numero_lineas;
-	char jol;
-	
-	(void)argc;
-	numero_lineas = 0;
-	fd = open(argv[1], O_RDONLY);
+	int ret;
+	int line;
+	char *buff;
 
-	while (read(fd, &jol,1) > 0)
-		if (jol == '\n')
-			numero_lineas++;
-	line = ft_strnew2ptr(numero_lineas); // Fx() new for the 2ptr arrary
-	close(fd);	
-
-	fd = open(argv[1],O_RDONLY);
-	
-	printf("#%d of lines found in document\n", numero_lineas);
-	printf("FD assigned by the system is; %d\n", fd);
-    printf("[%s]\n", *line);
-	get_next_line(fd, line);
-	return 0;
+	line = 0;
+	if (argc == 2)
+	{
+		fd = open(argv[1], O_RDONLY);
+		while ((ret = get_next_line(fd, &buff)) > 0)
+		{
+			printf("[Return: %d] Line #%d: %s\n", ret, ++line, buff);
+			free(buff);
+		}
+		printf("[Return: 0] Line #%d: (null)\n", ++line);
+		if (ret == -1)
+			printf("-----------\nError\n");
+		else if (ret == 0)
+			printf("-----------\nEnd of file\n");
+		close(fd);
+	}
+	if (argc == 1)
+	{
+		while ((ret = get_next_line(0, &buff)) > 0)
+			printf("[Return: %d] Line #%d: %s\n", ret, ++line, buff);
+		if (ret == -1)
+			printf("-----------\nError\n");
+		else if (ret == 0)
+			printf("-----------\nEnd of stdin\n");
+		close(fd);
+	}
+	return (0);
 }
