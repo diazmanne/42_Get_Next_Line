@@ -11,7 +11,7 @@ int main(int ac, char **av)
 	ac = 0;
 	fd = open (av[1], O_RDONLY);
 	get_next_line(fd, &line);
-	printf("[Whats is inside of Line]%s\n", line);
+//	printf("[Whats is inside of Line]%s\n", line);
 	free(line);
 	return 0;
 }
