@@ -1,5 +1,5 @@
 #include "get_next_line.h"
-/*
+
 int		get_next_line(const int fd, char **line)
 {
 	int r;
@@ -43,7 +43,7 @@ int		get_next_line(const int fd, char **line)
 	}
 	return (1);
 }
-*/
+
 // Functional gnl
 int		get_next_line(const int fd, char **line)
 {
@@ -87,7 +87,6 @@ int		get_next_line(const int fd, char **line)
 	}
 	return (1);
 }
-/*
 ////////
 	int			r;
 	char		*b;
@@ -188,4 +187,3 @@ int		get_next_line(const int fd, char **line)
 //	ss[fd] = ft_strdup(t);
 	printf("[SS deleted]:%s\n", ss[fd]);
 	*line = ft_strdup(t2);
-*/
