@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/17 15:49:42 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/17 17:10:41 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/08 21:05:58 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/09 18:48:50 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t i;
-	size_t j;
+	char	*r;
+	int		l;
+	int		t;
+	int		x;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	j = ft_strlen(s);
-	while (ft_strwhitespace(s[i]))
-		i++;
-	while (ft_strwhitespace(s[j - 1]))
-		j--;
-	if (i > j)
-		j = i;
-	return (ft_strsub(s, i, j - i));
+	x = -1;
+	l = 0;
+	t = 0;
+	while (ft_isspace(*(s + ++x)))
+		l++;
+	while (*(s + x++))
+		t = ft_isspace(*(s + x - 1)) ? t + 1 : 0;
+	r = ft_strnew(ft_strlen(s) - t - l);
+	if (!r)
+		return (NULL);
+	return (ft_strncpy(r, s + l, ft_strlen(s) - t - l));
 }

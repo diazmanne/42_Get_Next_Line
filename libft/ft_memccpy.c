@@ -3,22 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 21:41:18 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/15 23:12:10 by maparmar         ###   ########.fr       */
+/*   Created: 2019/02/16 19:33:47 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/06 19:38:24 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	while (n--)
+	size_t			i;
+	unsigned char	x;
+	unsigned char	*d;
+	unsigned char	*s;
+
+	x = (unsigned char)c;
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	i = 0;
+	while (i < n)
 	{
-		*(unsigned char *)dst++ = *(unsigned char *)src;
-		if (*(unsigned char *)src++ == (unsigned char)c)
-			return (dst);
+		d[i] = s[i];
+		if (s[i] == x)
+		{
+			return (d + i + 1);
+		}
+		i++;
 	}
 	return (NULL);
 }

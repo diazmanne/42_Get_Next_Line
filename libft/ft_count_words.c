@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strwhitespace.c                                 :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/17 16:16:23 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/17 16:49:22 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/09 17:18:11 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/09 17:57:55 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strwhitespace(char c)
+int		ft_count_words(const char *s, int i, char c)
 {
-	return (c == 32 || c == '\n' || c == '\t');
+	int w;
+
+	i = 0;
+	w = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+			w++;
+		while (s[i] != c && s[i])
+			i++;
+	}
+	return (w);
 }

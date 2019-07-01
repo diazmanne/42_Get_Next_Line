@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countlength.c                                   :+:      :+:    :+:   */
+/*   ft_find_word.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/19 17:10:50 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/20 19:21:47 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/09 17:47:56 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/09 18:02:05 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count(char const *str, char c)
+int		ft_find_word(const char *str, int i, char **ret, char c)
 {
-	int i;
-	int flag;
-	int count;
+	int		l;
+	int		spc;
 
-	i = 0;
-	flag = 0;
-	count = 0;
-	while (*str)
+	spc = 0;
+	l = 0;
+	while (*str == c)
 	{
-		if (!flag && *str != c)
-		{
-			count++;
-		}
-		flag = (str[i] == c) ? 0 : 1;
 		str++;
+		spc++;
 	}
-	return (count);
+	while (str[l] && str[l] != c)
+		l++;
+	if (l > 0)
+	{
+		ret[i] = ft_strnew(l);
+		ft_strncpy(ret[i], str, l);
+	}
+	return (spc + l);
 }

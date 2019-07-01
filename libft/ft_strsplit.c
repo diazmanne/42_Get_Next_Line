@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/17 19:45:23 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/20 19:21:23 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/08 20:59:43 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/09 18:04:01 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,24 @@
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**r;
-	size_t	flag;
-	size_t	index;
-	size_t	i;
-	size_t	start;
+	int		i;
+	int		x;
+	int		l;
 
 	if (!s)
 		return (NULL);
-	if (!(r = (char **)ft_memalloc(sizeof(char *) * (ft_count(s, c) + 1))))
+	x = ft_count_words(s, 0, c);
+	r = (char **)ft_memalloc((x + 1) * sizeof(char *));
+	l = 0;
+	if (!r)
 		return (NULL);
-	flag = 0;
-	i = -1;
-	index = 0;
-	start = 0;
-	while (s[++i])
+	i = 0;
+	l = 0;
+	while (*s)
 	{
-		if (s[i] == c && flag)
-			r[index++] = ft_strsub(s, start, i - start);
-		if (!flag && s[i] != c)
-			start = i;
-		flag = (s[i] == c) ? 0 : 1;
+		l = ft_find_word(s, i++, r, c);
+		s += l;
 	}
-	if (flag)
-		r[index] = ft_strsub(s, start, i - start);
+	r[x] = 0;
 	return (r);
 }

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew2ptr.c                                    :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 20:26:17 by emdiaz            #+#    #+#             */
-/*   Updated: 2019/06/13 21:23:18 by emdiaz           ###   ########.fr       */
+/*   Created: 2019/02/26 21:21:31 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/02/26 22:27:02 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    **ft_strnew2ptr(size_t size)
+size_t		ft_strnlen(const char *s, size_t maxlen)
 {
-    return ((char **)ft_memalloc(sizeof(char *) * size + 1));
+	size_t i;
+
+	i = 0;
+	while (s[i] && i < maxlen)
+	{
+		i++;
+	}
+	return (i);
 }

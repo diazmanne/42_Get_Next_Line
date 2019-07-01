@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_otherwhitespace.c                               :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/17 16:20:30 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/17 16:34:58 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/08 20:58:01 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/09 18:08:19 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_otherwhitespace(char c)
+int		ft_isspace(const int c)
 {
-	return (c == '\v' || c == '\f' || c == '\r');
+	int	x;
+
+	x = 0;
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	else
+		return (0);
 }

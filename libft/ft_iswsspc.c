@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_iswsspc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparmar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emdiaz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/19 23:01:46 by maparmar          #+#    #+#             */
-/*   Updated: 2019/02/19 23:24:36 by maparmar         ###   ########.fr       */
+/*   Created: 2019/03/08 20:53:23 by emdiaz            #+#    #+#             */
+/*   Updated: 2019/03/08 20:54:03 by emdiaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(long c, int len)
+int	ft_iswsspc(char c)
 {
-	int base;
-
-	base = 10;
-	while (c > 0)
-	{
-		c /= base;
-		len++;
-	}
-	return (len);
+	return (c == ' ' || c == '\t' || c == '\n' ||
+			c == '\r' || c == '\v' || c == '\f');
 }
