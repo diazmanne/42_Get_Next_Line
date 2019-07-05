@@ -32,8 +32,8 @@ GNL is designed to train you in key concepts input - output system call, static 
 
 ###	III.	DEFINITIONS AND ACRONYMS
 
--GNL: Get Next Line.
--I/O: Input - Output System Call
+-	GNL: Get Next Line.
+-	I/O: Input - Output System Call
 
 ####	Definitions:
 
