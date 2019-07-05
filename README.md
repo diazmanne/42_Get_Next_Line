@@ -4,21 +4,6 @@
 This projects shows you how to build a C function that allows to read a document line by line using the a newline character ('\n') as delimiter, without knowing its size beforehand. Returninng an integer value if the line is found..  
 
 ### I.	SCOPE
-### II.	REQUIREMENTS
-### III.	DEFINITIONS AND ACRONYMS
-### IV.	PROJECT SPECIFIC INFORMATION
-### V.	PROCEDURE
-### VI.	RESPONSIBILITIES
-### VII.	ASSOCIATED DOCUMENTS
-### VIII. RECORDS
-### IX.	PROCESS
-### X.	ATTACHMENTS
-### XI.	APPROVAL SIGNATURES
-### XII.	CONTRIBUTING
-
-
-
-### I.	SCOPE
 
 GNL is designed to train you in key concepts input - output system call, static variables , memory  and error management. The project needs approximately 20 hrs in over a 4 weeks period.
 
