@@ -38,6 +38,7 @@ GNL is designed to train you in key concepts input - output system call, static 
 ####	Definitions:
 
 Line: string that ends with a ‘\n’
+
 Proto:
 `int	get_next_line(const int fd, char **line);`
 
