@@ -1,4 +1,4 @@
-
+![](name-of-giphy.gif)
 # Get Next Line
 
 This projects shows you how to build a C function that allows to read a document line by line using the a newline character ('\n') as delimiter, without knowing its size beforehand. Returninng an integer value if the line is found..  
