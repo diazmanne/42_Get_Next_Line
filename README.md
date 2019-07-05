@@ -22,7 +22,7 @@ This projects shows you how to build a C function that allows to read a document
 
 GNL is designed to train you in key concepts input - output system call, static variables , memory  and error management. The project needs approximately 20 hrs in over a 4 weeks period.
 
-###II.	REQUIREMENTS
+###	II.	REQUIREMENTS
 
 * libft
 * author
@@ -30,18 +30,18 @@ GNL is designed to train you in key concepts input - output system call, static 
 * get_next_line.h
 
 
-###III.	DEFINITIONS AND ACRONYMS
+###	III.	DEFINITIONS AND ACRONYMS
 
 -GNL: Get Next Line.
 -I/O: Input - Output System Call
 
-####Definitions:
+####	Definitions:
 
 Line: string that ends with a ‘\n’
 Proto:
 `int	get_next_line(const int fd, char **line);`
 
-###Returning values:
+###	Returning values:
 
 `1` | Line read.
 
@@ -49,7 +49,7 @@ Proto:
 
 `-1` | Error.
 
-###IV.	PROJECT SPECIFIC INFORMATION
+###	IV.	PROJECT SPECIFIC INFORMATION
 
 * Allowed Functions `read`, `free`,`close`
 * Gnl functions must be 5 functions of 25 max
@@ -57,7 +57,7 @@ Proto:
 * `$>cat -e author`
 * `user_login$`
 
-###V.	PROCEDURE
+###	V.	PROCEDURE
 
 ##### Compilation:
 
@@ -67,7 +67,7 @@ Proto:
 
 `make re` | Delete files generated from compilation and recompile.
 
-###.	Contributing
+###		Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
